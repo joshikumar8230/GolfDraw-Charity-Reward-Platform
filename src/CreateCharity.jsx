@@ -39,7 +39,7 @@ function CreateCharity() {
 
     try {
       const res = await fetch(
-        "http://localhost:5000/admin/create-charity",
+        "https://golfdraw-charity-reward-platform-2.onrender.com/admin/create-charity",
         {
           method: "POST",
           headers: {

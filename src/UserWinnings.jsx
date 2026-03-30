@@ -27,7 +27,7 @@ function UserWinnings() {
     try {
       const token = sessionStorage.getItem("token");
 
-      const res = await fetch("http://localhost:5000/winnings", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/winnings", {
         headers: { Authorization: token },
       });
 

@@ -42,7 +42,7 @@ function AdminCharities() {
     try {
       setLoading(true); // 🔥 START LOADING
 
-      const res = await fetch("http://localhost:5000/admin/charities", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/admin/charities", {
         headers: { Authorization: token },
       });
 

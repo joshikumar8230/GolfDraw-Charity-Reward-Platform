@@ -33,7 +33,7 @@ function AdminWinners() {
     const token = sessionStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:5000/admin/winners", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/admin/winners", {
         headers: { Authorization: token },
       });
 
@@ -50,7 +50,7 @@ function AdminWinners() {
     const token = sessionStorage.getItem("token");
 
     try {
-      await fetch(`http://localhost:5000/admin/approve-winner/${id}`, {
+      await fetch(`https://golfdraw-charity-reward-platform-2.onrender.com/admin/approve-winner/${id}`, {
         method: "POST",
         headers: { Authorization: token },
       });
@@ -67,7 +67,7 @@ function AdminWinners() {
     const token = sessionStorage.getItem("token");
 
     try {
-      await fetch(`http://localhost:5000/admin/reject-winner/${id}`, {
+      await fetch(`https://golfdraw-charity-reward-platform-2.onrender.com/reject-winner/${id}`, {
         method: "POST",
         headers: { Authorization: token },
       });
@@ -88,7 +88,7 @@ function AdminWinners() {
 
       // 1️⃣ Create payout order (backend)
       const res = await fetch(
-        `http://localhost:5000/admin/create-payout/${winner.id}`,
+        `https://golfdraw-charity-reward-platform-2.onrender.com/admin/create-payout/${winner.id}`,
         {
           method: "POST",
           headers: { Authorization: token },
@@ -114,7 +114,7 @@ function AdminWinners() {
         handler: async function (response) {
           // 3️⃣ Verify payment
           const verifyRes = await fetch(
-            `http://localhost:5000/admin/verify-payout`,
+            `https://golfdraw-charity-reward-platform-2.onrender.com/admin/verify-payout`,
             {
               method: "POST",
               headers: {

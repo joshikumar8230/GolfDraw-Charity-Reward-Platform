@@ -18,7 +18,7 @@ function Subscription() {
 const handleSubscribe = async (plan) => {
   try {
     // 1️⃣ Create order
-    const res = await fetch("http://localhost:5000/create-order", {
+    const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/create-order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const handleSubscribe = async (plan) => {
 
       handler: async function (response) {
         // 3️⃣ Verify payment
-        const verifyRes = await fetch("http://localhost:5000/verify-payment", {
+        const verifyRes = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/verify-payment", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

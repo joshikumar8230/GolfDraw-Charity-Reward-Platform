@@ -19,7 +19,7 @@ function Signup() {
   const navigate = useNavigate();
 
   const handleSignup = async () => {
-    const res = await fetch("http://localhost:5000/signup", {
+    const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

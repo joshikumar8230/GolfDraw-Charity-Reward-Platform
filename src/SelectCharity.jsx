@@ -29,7 +29,7 @@ function SelectCharity() {
     try {
       const token = sessionStorage.getItem("token");
 
-      const res = await fetch("http://localhost:5000/charities", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/charities", {
         headers: { Authorization: token },
       });
 
@@ -55,7 +55,7 @@ function SelectCharity() {
     const token = sessionStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:5000/select-charity", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/select-charity", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

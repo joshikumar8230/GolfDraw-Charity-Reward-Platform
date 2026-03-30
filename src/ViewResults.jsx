@@ -25,7 +25,7 @@ function ViewResults() {
   const fetchResults = async () => {
     const token = sessionStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/results", {
+    const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/results", {
       headers: { Authorization: token },
     });
 
@@ -50,7 +50,7 @@ function ViewResults() {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/upload-proof/${data.winner.id}`,
+        `https://golfdraw-charity-reward-platform-2.onrender.com/upload-proof/${data.winner.id}`,
         {
           method: "POST",
           headers: {

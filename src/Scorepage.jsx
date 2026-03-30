@@ -30,7 +30,7 @@ function Scorepage() {
   const fetchScores = async () => {
     const token = sessionStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/scores", {
+    const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/scores", {
       headers: {
         Authorization: token,
       },
@@ -44,7 +44,7 @@ function Scorepage() {
     try {
       const token = sessionStorage.getItem("token");
 
-      const res = await fetch("http://localhost:5000/results", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/results", {
         headers: { Authorization: token },
       });
 
@@ -58,6 +58,9 @@ function Scorepage() {
   };
 
   const addScore = async () => {
+    const numScore = Number(score);
+
+    // ❌ Empty check
     if (!score) {
       Swal.fire({
         title: "Oops!",
@@ -67,15 +70,26 @@ function Scorepage() {
       return;
     }
 
+    // ❌ Range validation
+    if (numScore < 1 || numScore > 45) {
+      Swal.fire({
+        title: "Invalid Score 🚫",
+        text: "Score must be between 1 and 45",
+        icon: "error",
+        confirmButtonColor: "#d32f2f",
+      });
+      return;
+    }
+
     const token = sessionStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/add-score", {
+    const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/add-score", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: token,
       },
-      body: JSON.stringify({ score: Number(score) }),
+      body: JSON.stringify({ score: numScore }),
     });
 
     const data = await res.json();
@@ -107,7 +121,6 @@ function Scorepage() {
           Score Management
         </Typography>
 
-        {/* 🔥 Column Layout */}
         <Grid container spacing={3} direction="column">
 
           {/* ✅ Add Score */}
@@ -125,6 +138,7 @@ function Scorepage() {
                       label="Score (1-45)"
                       value={score}
                       onChange={(e) => setScore(e.target.value)}
+                      inputProps={{ min: 1, max: 45 }} // ✅ restrict input
                       fullWidth
                     />
 

@@ -22,7 +22,7 @@ function Profile() {
     const token = sessionStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:5000/me", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/me", {
         headers: { Authorization: token },
       });
 
@@ -46,7 +46,7 @@ function Profile() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/change-password", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/change-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

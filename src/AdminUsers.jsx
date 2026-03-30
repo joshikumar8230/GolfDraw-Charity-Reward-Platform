@@ -31,7 +31,7 @@ function AdminUsers() {
     const token = sessionStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:5000/admin/users", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/admin/users", {
         headers: { Authorization: token },
       });
 

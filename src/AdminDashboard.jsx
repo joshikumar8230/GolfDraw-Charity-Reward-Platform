@@ -26,7 +26,7 @@ function AdminDashboard() {
   // ✅ FETCH LATEST DRAW
   const fetchLatestDraw = async () => {
     try {
-      const res = await fetch("http://localhost:5000/admin/latest-draw", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/admin/latest-draw", {
         headers: { Authorization: token },
       });
 
@@ -55,7 +55,7 @@ function AdminDashboard() {
   // ✅ CREATE DRAW
   const createDraw = async () => {
     try {
-      const res = await fetch("http://localhost:5000/admin/create-draw", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/admin/create-draw", {
         method: "POST",
         headers: { Authorization: token },
       });
@@ -81,7 +81,7 @@ function AdminDashboard() {
   // ✅ RUN DRAW
   const runDraw = async () => {
     try {
-      const res = await fetch("http://localhost:5000/admin/run-draw", {
+      const res = await fetch("https://golfdraw-charity-reward-platform-2.onrender.com/admin/run-draw", {
         method: "POST",
         headers: { Authorization: token },
       });
