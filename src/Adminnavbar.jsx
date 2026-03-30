@@ -23,9 +23,9 @@ function Adminnavbar() {
       confirmButtonText: "Yes, logout",
     }).then((result) => {
       if (result.isConfirmed) {
-        sessionStorage.removeItem("token");
-        sessionStorage.removeItem("role", data.role);
-        sessionStorage.removeItem("charity_id", data.charity_id || "");
+              sessionStorage.removeItem("token");
+      sessionStorage.removeItem("role");
+      sessionStorage.removeItem("charity_id");
         navigate("/login");
 
         Swal.fire("Logged out!", "", "success");
